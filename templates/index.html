@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>***Checkerboard***</title>
+
+    <style>
+        .title{
+            text-align: center;
+            padding-top: 50px;
+            padding-Bottom: 30px
+        }
+
+        .container{
+            display:flex;
+            justify-content: space-evenly;
+        }
+
+        tbody {
+    border: 3px solid black;
+}
+
+table tr td {
+    height: 50px;
+    width: 50px;
+}
+
+.color1 {
+    background-color: red;
+}
+
+.color2 {
+    background-color: black;
+}
+    </style>
+
+</head>
+<body>
+    <table id="container">
+        {% for red in range(x): %}
+            <tr>
+                {% for black in range(y): %}
+                    {% if (red + black) %2 == 0 %}
+                        <td class="color1" style="background-color: {{color1}}"></td>
+                    {% else %}
+                        <td class="color2" style="background-color: {{color2}}"></td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
+
+</body>
+</html>
